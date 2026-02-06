@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bestie Forever 💖</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffd6e8, #fff0f5);
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      padding-top: 50px;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ff4d88;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 20px;
+      transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+      background-color: #ff99cc;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #ccc;
+      color: #444;
+      position: absolute;
+    }
+
+    #result {
+      display: none;
+      margin-top: 40px;
+      font-size: 1.5em;
+      color: #ff4d88;
+    }
+
+    .emoji {
+      font-size: 3em;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    #bear {
+      display: none;
+      font-size: 4em;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my bestie forever? 🥺💖</h1>
+
+  <button id="yesBtn" onclick="yesClicked()">YES 💕</button>
+  <button id="noBtn" onmouseover="moveNo()" onclick="noClicked()">NO 😤</button>
+
+  <div id="result">
+    <p>
+      Yayyy 🥹💐  
+      You are not just my bestie, you’re my safe place, my chaos partner,  
+      my forever dost 🤍  
+      No matter what, I’ll always support you, hype you,  
+      and stand by you — besties FOREVER 🧸💖
+    </p>
+
+    <div class="emoji">🌸 💐 🧸 💖 💞 🌷</div>
+  </div>
+
+  <div id="bear">🐻😭👊</div>
+
+  <script>
+    function yesClicked() {
+      document.getElementById("result").style.display = "block";
+      document.getElementById("yesBtn").style.display = "none";
+      document.getElementById("noBtn").style.display = "none";
+    }
+
+    function moveNo() {
+      const noBtn = document.getElementById("noBtn");
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    function noClicked() {
+      document.getElementById("bear").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
